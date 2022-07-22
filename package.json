@@ -4,5 +4,8 @@
   "description": "This is a web scrapper built with puppeteer to get TRM (Tasa representativa del mercado) in Colombia",
   "main": "index.js",
   "author": "alonsso",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^15.5.0"
+  }
 }
