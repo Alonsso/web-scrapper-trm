@@ -1,0 +1,8 @@
+{
+  "name": "web-scrapper-trm",
+  "version": "1.0.0",
+  "description": "This is a web scrapper built with puppeteer to get TRM (Tasa representativa del mercado) in Colombia",
+  "main": "index.js",
+  "author": "alonsso",
+  "license": "MIT"
+}
