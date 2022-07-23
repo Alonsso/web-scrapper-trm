@@ -5,11 +5,8 @@ const puppeteer = require('puppeteer');
         headless: false,
     });
     const page = await browser.newPage();
-    await page.goto('https://www.superfinanciera.gov.co/CargaDriver/index.jsp')
-        .then(() => {
-
-        }).catch();
-    await page.screenshot({ path: 'bvc.png' });
+    await page.goto('https://totoro.banrep.gov.co/analytics/saw.dll?Go&Path=%2fshared%2fWebBanco%2fES%2fTasa%20Representativa%20del%20Mercado%2flogin&NQUser=publico&NQPassword=publico123');
+    await page.screenshot({ path: 'banrep.png' });
     await page.setExtraHTTPHeaders({
         "user-agent":
             "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36",
@@ -19,7 +16,7 @@ const puppeteer = require('puppeteer');
         "accept-encoding": "gzip, deflate, br",
         "accept-language": "en-US,en;q=0.9,en;q=0.8",
     });
-    await page.waitForSelector("table");
+    await page.waitForSelector("CVFormatTable");
     const value = await page.$$eval("table tr td", tables => tables.map((table)=>{
         return table.innerText.trim();
     }));
