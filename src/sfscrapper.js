@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-(async () => {
+const sfscrapper = async () => {
     const browser = await puppeteer.launch({
         headless: false,
     });
@@ -20,6 +20,8 @@ const puppeteer = require('puppeteer');
     const value = await page.$$eval("table tr td", tables => tables.map((table)=>{
         return table.innerText.trim();
     }));
-    console.log("value : ", value.join(' '));
     await browser.close();
-})();
+    return "value : ", value.join(' ');
+}
+
+module.exports = sfscrapper;
